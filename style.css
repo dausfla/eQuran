@@ -1,0 +1,130 @@
+ /* Custom CSS untuk Aplikasi eQuran */
+
+/* Font Arab yang bagus dan jelas */
+.ar-font {
+    font-family: 'Scheherazade New', serif;
+    font-size: 2rem; /* Default untuk desktop */
+    line-height: 2.5;
+    text-align: right;
+    direction: rtl; 
+    font-weight: 500;
+}
+
+/* Penyesuaian font Arab untuk layar kecil (Responsif) */
+@media (max-width: 768px) {
+    .ar-font {
+        font-size: 1.6rem;
+        line-height: 2.2;
+    }
+}
+
+/* Gaya untuk setiap blok ayat */
+.ayat-item {
+    padding: 1.5rem 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+/* Nomor Ayat */
+.ayat-number {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #66bb6a;
+    margin-right: 0.5rem;
+}
+
+/* Membuat card daftar surah tetap di tempatnya saat scroll (di desktop) */
+.sticky-card {
+    position: sticky;
+    top: 70px; /* Jarak dari navbar */
+}
+
+/* Pada perangkat mobile, matikan sticky agar tidak mengganggu */
+@media (max-width: 991px) { /* Di bawah ukuran lg */
+    .sticky-card {
+        position: static;
+        height: auto !important; /* Batas tinggi dihilangkan di mobile */
+    }
+    /* Batas tinggi pada list surah dihilangkan di mobile untuk scroll penuh */
+    #surah-list-container {
+        max-height: none !important;
+        overflow-y: visible !important;
+    }
+}
+
+/* Styling saat hover/active pada daftar surah */
+.list-group-item-action:hover, .list-group-item.active {
+    background-color: #f1f8e9; /* Hijau muda saat hover */
+    cursor: pointer;
+    border-color: #66bb6a;
+}
+.list-group-item.active {
+    border-left: 3px solid #66bb6a; /* Garis hijau untuk item yang aktif */
+    font-weight: bold;
+}
+
+
+/* --- Dark Mode Styles --- */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+    background-color: #004d40 !important;
+}
+
+body.dark-mode .card {
+    background-color: #242424;
+    color: #e0e0e0;
+    border: 1px solid #3a3a3a !important;
+}
+
+body.dark-mode .list-group-item {
+    background-color: #242424;
+    color: #e0e0e0;
+    border-color: #3a3a3a;
+}
+
+body.dark-mode .list-group-item-action:hover, body.dark-mode .list-group-item.active {
+    background-color: #333333; /* Warna hover gelap */
+    color: #fff;
+}
+body.dark-mode .list-group-item.active {
+    border-color: #a5d6a7;
+}
+
+body.dark-mode .form-control {
+    background-color: #333333;
+    color: #e0e0e0;
+    border-color: #555555;
+}
+
+body.dark-mode .form-control::placeholder {
+    color: #9e9e9e;
+}
+
+body.dark-mode .text-success {
+    color: #a5d6a7 !important; /* Hijau yang lebih cerah untuk dark mode */
+}
+
+body.dark-mode .text-muted {
+    color: #9e9e9e !important;
+}
+
+body.dark-mode .ayat-item {
+    border-bottom: 1px dashed #444444; /* Garis pemisah gelap */
+}
+
+body.dark-mode #dark-toggle {
+    background-color: #a5d6a7;
+    color: #1a1a1a;
+    border-color: #a5d6a7;
+}
+
+#bismillah-text {
+    color: #1a1a1a; /* Default Light Mode */
+}
+
+body.dark-mode #bismillah-text {
+    color: #e0e0e0; /* Warna putih di Dark Mode */
+}
